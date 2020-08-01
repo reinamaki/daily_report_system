@@ -18,15 +18,8 @@ import javax.persistence.Table;
 @Table(name = "reports")
 @NamedQueries({ @NamedQuery(name = "getAllReports", query = "SELECT r FROM Report AS r ORDER BY r.id DESC"),
 		@NamedQuery(name = "getReportsCount", query = "SELECT COUNT(r) FROM Report AS r"),
-		 @NamedQuery(
-		            name = "getMyAllReports",
-		            query = "SELECT r FROM Report AS r WHERE r.employee = :employee ORDER BY r.id DESC"
-		            ),
-		    @NamedQuery(
-		            name = "getMyReportsCount",
-		            query = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :employee"
-		            )
-		})
+		@NamedQuery(name = "getMyAllReports", query = "SELECT r FROM Report AS r WHERE r.employee = :employee ORDER BY r.id DESC"),
+		@NamedQuery(name = "getMyReportsCount", query = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :employee") })
 @Entity
 public class Report {
 	@Id
@@ -44,6 +37,8 @@ public class Report {
 	@Column(name = "title", length = 255, nullable = false)
 	private String title;
 
+	@Column(name = "sell", length = 100, nullable = false)
+	private Integer sell;
 	@Lob
 	@Column(name = "content", nullable = false)
 	private String content;
@@ -92,6 +87,14 @@ public class Report {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public Integer getSell() {
+		return sell;
+	}
+
+	public void setSell(Integer sell) {
+		this.sell = sell;
 	}
 
 	public Timestamp getCreated_at() {

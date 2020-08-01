@@ -24,6 +24,10 @@
 							<td><c:out value="${report.content}" /></td>
 						</tr>
 						<tr>
+							<th>チケット売上</th>
+							<td><c:out value="${report.sell}" /></td>
+						</tr>
+						<tr>
 							<th>登録日時</th>
 							<td><fmt:formatDate value="${report.created_at}"
 									pattern="yyyy-MM-dd HH:mm:ss" /></td>

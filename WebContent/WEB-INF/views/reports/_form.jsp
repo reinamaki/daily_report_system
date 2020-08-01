@@ -36,11 +36,14 @@
 <textarea name="content" rows="10" cols="50">${report.content}</textarea>
 <br />
 <br />
-<label for="contenttwo">商談内容</label>
+
+<label for="sell">チケット売上(枚)</label>
 <br />
-<textarea name="content" rows="10" cols="50">${report.content}</textarea>
+<input type="text" name="sell" value="${report.sell}" />
 <br />
 <br />
+
+<p>お疲れ様です。</p>
 
 <input type="hidden" name="_token" value="${_token}" />
 <button type="submit">投稿</button>
