@@ -39,7 +39,7 @@
 
 <label for="sell">チケット売上(枚)</label>
 <br />
-<input type="text" name="sell" value="${report.sell}" />
+<input type="number" name="sell" value="${report.sell}" />
 <br />
 <br />
 
